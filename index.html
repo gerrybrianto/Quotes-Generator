@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>QuoteGenerator</title>
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="./styles.css" rel="stylesheet" />
+    <script src="./main.js"></script>
+  </head>
+  <body>
+    <header><h1>Quote generator</h1></header>
+    <div class="card">
+      <div id="quotes-display"></div>
+      <div class="selection-container">
+        <div class="selection-item">
+        <label for="nb-quotes-select">Choose the number of quotes:</label>
+        <select name="nb-quotes" id="nb-quotes-select">
+          <option value="">--Please choose the number of quotes--</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </div>
+
+      <div class="selection-item">
+        <label for="type-select">Choose a type:</label>
+        <select name="type" id="type-select">
+          <option value="">--Please choose a type--</option>
+          <option value="1">Type 1</option>
+          <option value="2">Type 2</option>
+        </select>
+      </div>
+
+      <button class="btn third" onclick="quotesGenerator()">
+        Generate random quote
+      </button>
+    </div>
+  </body>
+</html>
