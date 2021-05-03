@@ -1,10 +1,40 @@
-const type1SentenceFirstPart = ["baba", "bibi", "bobo", "bebe"];
-const type1SentenceSecondPart = ["tata", "titi", "toto", "tete"];
-const type1SentenceThirdPart = ["lala", "lili", "lolo", "lele"];
+const type1SentenceFirstPart = [
+  "La crise",
+  "La conjoncture",
+  "La baisse de confiance",
+  "La restriction",
+];
+const type1SentenceSecondPart = [
+  "présente",
+  "actuelle",
+  "qui est la nôtre",
+  "de cette fin de siècle",
+];
+const type1SentenceThirdPart = [
+  "ne doit pas être négligée",
+  "doit être prise en considération.",
+  "est a étudier.",
+  "est préocuppante.",
+];
 
-const type2SentenceFirstPart = ["baba*", "bibi*", "bobo*", "bebe*"];
-const type2SentenceSecondPart = ["tata*", "titi*", "toto*", "tete*"];
-const type2SentenceThirdPart = ["lala*", "lili*", "lolo*", "lele*"];
+const type2SentenceFirstPart = [
+  "Toutes les",
+  "Chacune des",
+  "La majorité des",
+  "La globalité des",
+];
+const type2SentenceSecondPart = [
+  "solutions",
+  "issues",
+  "problématiques",
+  "alternatives",
+];
+const type2SentenceThirdPart = [
+  "sont envisageables.",
+  "relèvent du bon sens.",
+  "sont inamagineables.",
+  "sont réalisables.",
+];
 
 const quotesGenerator = () => {
   const quotesDisplay = document.getElementById("quotes-display");
@@ -15,12 +45,11 @@ const quotesGenerator = () => {
     quotes.push(singleQuote());
   }
   quotes.forEach((quote) => {
-    quotesDisplay.innerHTML += quote + "</br>";
+    quotesDisplay.innerHTML += `<div class="quote-display-container">${quote}</div>`;
   });
 };
 
 const singleQuote = () => {
-  console.log("please");
   let quote = "";
   const selectType = document.getElementById("type-select");
   const sentencesCollection = initSentencesCollection(selectType.selectedIndex);
@@ -31,7 +60,6 @@ const singleQuote = () => {
 };
 
 const initSentencesCollection = (type) => {
-  console.log("init" + type);
   let sentencesCollection = [];
   if (type === 1) {
     sentencesCollection = [
@@ -46,8 +74,6 @@ const initSentencesCollection = (type) => {
       type2SentenceThirdPart,
     ];
   }
-
-  console.log(sentencesCollection);
   return sentencesCollection;
 };
 

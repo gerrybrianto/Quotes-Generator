@@ -2,13 +2,28 @@
 
 html,
 body {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Roboto", sans-serif;
   height: 100%;
+  font-size: 1.1rem;
 }
 
 body,
 h1 {
   margin: 0;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+label{
+  margin-right: 1rem;
+}
+
+select{
+  width: 5rem;
+  font-size: 1rem;
 }
 
 header {
@@ -27,22 +42,20 @@ header {
   flex-direction: column;
   align-items: center;
   margin: auto;
-  height: 70%;
+  min-height: 70%;
   width: 60%;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-/* .quote-display-container {
-  color: red;
+.quote-display-container {
   margin-top: 3rem;
-  width: 60%;
-  height: 40%;
+  padding: 1.5rem;
   border-radius: 10px;
   border: 1px solid black;
-} */
+}
 
-#quotes-display{
+#quotes-display {
   display: flex;
   flex-direction: column;
 }
@@ -51,38 +64,41 @@ header {
   margin: 2rem 0;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .selection-item {
   margin: 1rem 0;
 }
-
 .btn {
-  box-sizing: border-box;
-  appearance: none;
-  background-color: transparent;
-  border: 2px solid #3498db;
-  box-shadow: 0 0 40px 40px #3498db inset, 0 0 0 0 #3498db;
-
-  border-radius: 0.6em;
-  color: #fff;
-  cursor: pointer;
-  display: flex;
-  align-self: center;
   font-size: 1rem;
-  font-weight: 400;
-  line-height: 1;
-  margin: 20px;
-  padding: 1.2em 2.8em;
-  text-decoration: none;
-  text-align: center;
-  text-transform: uppercase;
-  font-weight: 700;
-  transition: all 150ms ease-in-out;
+  margin-top: 1rem;
+  cursor: pointer;
+  padding: 0.9rem 1.1rem;
+  border: 0px;
+  border-radius: 10px;
+  background: #000;
+  color: #ffffff;
+  transition: background-color 100ms linear;
+  min-width: 50%;
 }
 
-btn:hover,
-btn:focus {
-  color: #fff;
+.btn:focus {
   outline: 0;
+}
+
+.btn:hover {
+  background: #212121;
+  color: #ffffff;
+}
+
+.exit {
+  margin-top: 2rem;
+  color: red;
+}
+
+.goodbye {
+  margin-top: 5rem;
+  text-align: center;
+  font-size: 3rem;
 }
