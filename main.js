@@ -40,39 +40,42 @@ const quotesGenerator = () => {
   const quotesDisplay = document.getElementById("quotes-display");
   const selectNbQuotes = document.getElementById("nb-quotes-select");
   quotesDisplay.innerHTML = "";
-  let quotes = [];
-  for (let i = 0; i < selectNbQuotes.selectedIndex; i++) {
+  const quotes = [];
+  for (let i = 0; i < selectNbQuotes.selectedIndex; i++)
     quotes.push(singleQuote());
-  }
-  quotes.forEach((quote) => {
-    quotesDisplay.innerHTML += `<div class="quote-display-container">${quote}</div>`;
-  });
+  quotes.forEach(
+    (quote) =>
+      (quotesDisplay.innerHTML += `<div class="quote-display-container">${quote}</div>`)
+  );
 };
 
 const singleQuote = () => {
   let quote = "";
   const selectType = document.getElementById("type-select");
   const sentencesCollection = initSentencesCollection(selectType.selectedIndex);
-  sentencesCollection.forEach((sentencePart) => {
-    quote += " " + sentencePart[getRandomInt(4)];
-  });
+  sentencesCollection.forEach(
+    (sentencePart) => (quote += " " + sentencePart[getRandomInt(4)])
+  );
   return quote;
 };
 
 const initSentencesCollection = (type) => {
   let sentencesCollection = [];
-  if (type === 1) {
-    sentencesCollection = [
-      type1SentenceFirstPart,
-      type1SentenceSecondPart,
-      type1SentenceThirdPart,
-    ];
-  } else if (type === 2) {
-    sentencesCollection = [
-      type2SentenceFirstPart,
-      type2SentenceSecondPart,
-      type2SentenceThirdPart,
-    ];
+  switch (type) {
+    case 1:
+      sentencesCollection = [
+        type1SentenceFirstPart,
+        type1SentenceSecondPart,
+        type1SentenceThirdPart,
+      ];
+      break;
+    case 2:
+      sentencesCollection = [
+        type2SentenceFirstPart,
+        type2SentenceSecondPart,
+        type2SentenceThirdPart,
+      ];
+      break;
   }
   return sentencesCollection;
 };
