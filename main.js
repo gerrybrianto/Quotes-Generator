@@ -32,7 +32,7 @@ const type2SentenceSecondPart = [
 const type2SentenceThirdPart = [
   "sont envisageables.",
   "relèvent du bon sens.",
-  "sont inamagineables.",
+  "sont inimagineables.",
   "sont réalisables.",
 ];
 
